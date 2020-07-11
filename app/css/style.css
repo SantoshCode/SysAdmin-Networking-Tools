@@ -9,7 +9,8 @@
 }
 
 body {
-	color: #fff;
+	background-image: url('../img/bg.jpg');
+	color: var(--secondary-background-color);
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	display: flex;
@@ -25,6 +26,8 @@ ul {
 }
 
 .content {
+	background: '#333';
+
 	opacity: 0;
 	object-fit: cover;
 	position: absolute;
@@ -37,9 +40,10 @@ ul {
 }
 
 .content li {
+	background: '#333';
 	padding: 10px 0;
 	border-bottom: 1px #555 solid;
-	background: var(--secondary-background-color);
+	background: #fff;
 }
 
 .content.show {

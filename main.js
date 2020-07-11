@@ -31,11 +31,11 @@ function createMainWindow() {
 function createAboutWindow() {
 	aboutWindow = new BrowserWindow({
 		title: 'About SYS-Admin',
-		width: 800,
-		height: 800,
+		width: 300,
+		height: 300,
 		icon: './assets/icons/icon.png',
 		resizable: false,
-		backgroundColor: 'white',
+		backgroundColor: '#333',
 	});
 
 	aboutWindow.loadFile('./app/about.html');

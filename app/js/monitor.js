@@ -138,6 +138,7 @@ startBtn.addEventListener('click', () => {
 			showContent('');
 			(async () => {
 				let loc = await ipLocation(optionVal);
+				GetMap(optionVal);
 				showContent(`
         continent: ${loc.continent.code}
         country: ${loc.country.name}
