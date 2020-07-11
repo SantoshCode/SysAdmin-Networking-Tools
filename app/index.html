@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>SysAdmin | Networking Tools</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/all.min.css" />
+	</head>
+	<body>
+		<main>
+			<div class="content show">
+				<h1><i class="fas fa-info"></i> System Info</h1>
+				<ul>
+					<li>
+						<strong>Computer Name: </strong
+						><span id="comp-name"></span>
+					</li>
+					<li><strong>OS: </strong><span id="os"></span></li>
+					<li>
+						<strong>System Uptime: </strong
+						><span id="sys-uptime"></span>
+					</li>
+					<li>
+						<strong>Memory Total: </strong
+						><span id="mem-total"></span>
+					</li>
+					<li>
+						<strong>Local IP:(ipv4): </strong
+						><span id="local-ip"></span>
+					</li>
+					<li>
+						<strong>Public IP:(ipv4): </strong
+						><span id="public-ip"></span>
+					</li>
+					<li>
+						<strong>Public IP(ipv6): </strong
+						><span id="public-ipv6"></span>
+					</li>
+				</ul>
+			</div>
+			<div class="content" id="map-home">
+				<h1><i class="fas fa-cog"></i>Tools</h1>
+				<div class="tools-container">
+					<select id="content-select">
+						<option value="ping">Ping</option>
+						<option value="dns">DNS</option>
+						<option value="nmap">Nmap</option>
+						<option value="traceroute">Traceroute</option>
+						<option value="iplocation">iplocation</option>
+					</select>
+					<input type="text" id="content-url" />
+					<button type="button" id="content-start-btn">start</button>
+				</div>
+				<div id="content-show"></div>
+				<!-- <div
+					id="myMap"
+					style="position: relative; width: 1600px; height: 800px;"
+				></div> -->
+			</div>
+		</main>
+		<nav id="nav">
+			<ul>
+				<li>
+					<i class="fas fa-info"></i>
+					<p>System Info</p>
+				</li>
+				<li>
+					<i class="fas fa-cog"></i>
+					<p>Tools</p>
+				</li>
+				<li>
+					<i class="fas fa-cog"></i>
+					<p>Mac- Changer</p>
+				</li>
+			</ul>
+		</nav>
+
+		<script src="js/tabs.js"></script>
+		<script src="js/map/map.js"></script>
+
+		<script
+			type="text/javascript"
+			src="https://www.bing.com/api/maps/mapcontrol?callback=GetReadyMap&key=Anq7xs-Qy_Pyu9AxPGek8DgEWKALCvzC5YkXT0E16ZogDf0UT-W1rpBuDIAvC4sA"
+			async
+			defer
+		></script>
+
+		<script type="text/javascript">
+			function GetReadyMap() {
+				var map = new Microsoft.Maps.Map('#myMap');
+
+				//Add your post map load code here.
+			}
+		</script>
+		<script src="js/monitor.js"></script>
+	</body>
+</html>
