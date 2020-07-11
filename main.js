@@ -1,7 +1,7 @@
 const { app, BrowserWindow, Menu } = require('electron');
 
 // Set env
-process.env.NODE_ENV = 'development';
+process.env.NODE_ENV = 'production';
 
 const isDev = process.env.NODE_ENV !== 'production' ? true : false;
 const isMac = process.platform === 'darwin' ? true : false;
@@ -12,18 +12,18 @@ var glo;
 function createMainWindow() {
 	mainWindow = new BrowserWindow({
 		title: 'SYS-Admin',
-		width: isDev ? 800 : 355,
+		width: 800,
 		height: 500,
 		icon: './assets/icons/icon.png',
-		resizable: isDev ? true : false,
+		resizable: true,
 		webPreferences: {
 			nodeIntegration: true,
 		},
 	});
 
-	if (isDev) {
-		mainWindow.webContents.openDevTools();
-	}
+	// if (isDev) {
+	// 	mainWindow.webContents.openDevTools();
+	// }
 
 	mainWindow.loadFile('./app/index.html');
 }
