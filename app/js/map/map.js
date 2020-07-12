@@ -29,16 +29,21 @@ function GetMap(ipaddrs) {
 		res.shift();
 		console.log(res);
 		let map = new Microsoft.Maps.Map('#myMap', {});
-
-		//Create array of locations
-		let coords = res.map(item => {
-			if (item) {
-				return new Microsoft.Maps.Location(item[0], item[1]);
-			}
+		map.setView({
+			mapTypeId: Microsoft.Maps.MapTypeId.aerial,
 		});
 
+		//Create array of locations
+		let newCoords = [];
+		res.forEach(item => {
+			if (item[0] !== null) {
+				newCoords.push(new Microsoft.Maps.Location(item[0], item[1]));
+			}
+			return newCoords;
+		});
+		console.log(newCoords);
 		//Create a polyline
-		let line = new Microsoft.Maps.Polyline(coords, {
+		let line = new Microsoft.Maps.Polyline(newCoords, {
 			strokeColor: 'red',
 			strokeThickness: 3,
 			strokeDashArray: [3, 3],
@@ -47,7 +52,7 @@ function GetMap(ipaddrs) {
 		//Add the polyline to map
 		map.entities.push(line);
 
-		coords.forEach(coord => {
+		newCoords.forEach(coord => {
 			//Create custom Pushpin
 			let pin = new Microsoft.Maps.Pushpin(coord, null);
 

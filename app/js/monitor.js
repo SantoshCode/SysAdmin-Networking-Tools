@@ -128,7 +128,6 @@ startBtn.addEventListener('click', () => {
 						results += `close: code ${code}\n`;
 						showContent(results);
 					});
-
 				tracer.trace(optionVal);
 			} catch (ex) {
 				showContent(ex);
